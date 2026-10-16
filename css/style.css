@@ -1,1 +1,52 @@
+:root {
+    --navy: #15324b;
+    --navy-deep: #10283d;
+    --blue: #2878a5;
+    --blue-soft: #e8f2f7;
+    --green: #168b72;
+    --green-dark: #10745f;
+    --ink: #203447;
+    --muted: #687b8c;
+    --line: #dce6ec;
+    --surface: #ffffff;
+    --page: #f4f8fa;
+    --font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --primary-color: var(--navy);
+    --secondary-color: var(--blue);
+    --accent-color: var(--green);
+    --text-dark: var(--ink);
+    --text-light: var(--muted);
+    --bg-light: var(--page);
+    --white: var(--surface);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container,
+.header-container,
+.hero-container {
+    width: min(100% - 48px, 1200px);
+    margin: 0 auto;
+}
 
