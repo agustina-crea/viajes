@@ -1,1 +1,101 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Rafael Movilidad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🚌</span>
+                <h1>San Rafael <span>Movilidad</span></h1>
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="pages/turismo.html">Turismo</a></li>
+                    <li><a href="pages/feedback.html">Opiniones</a></li>
+                    <li><a href="pages/login.html" class="btn-login">Ingresar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+
+                <div class="search-panel">
+                    <h2>Movete por San Rafael</h2>
+                    <p>Encontrá información para organizar tus recorridos y descubrir la ciudad.</p>
+
+                    <form class="search-form" action="pages/turismo.html" method="get">
+                        <div class="form-group">
+                            <label for="origen">¿Desde dónde salís?</label>
+                            <input type="text" id="origen" name="origen" placeholder="Ej. Plaza San Martín" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destino">¿A dónde querés ir?</label>
+                            <input type="text" id="destino" name="destino" placeholder="Ej. Valle Grande" required>
+                        </div>
+
+                        <button type="submit" class="btn-search">Buscar recorrido</button>
+                    </form>
+                </div>
+
+                <div class="map-container-real">
+                    <iframe
+                        title="Mapa de San Rafael, Mendoza"
+                        src="https://maps.google.com/maps?q=San%20Rafael%20Mendoza%20Argentina&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <div class="container">
+                <h3>Descubrí San Rafael</h3>
+
+                <div class="grid-links">
+                    <a href="pages/turismo.html" class="card-link">
+                        <span class="card-icon">🏞️</span>
+                        <h4>Puntos turísticos</h4>
+                        <p>Conocé los lugares más interesantes para visitar en San Rafael.</p>
+                    </a>
+
+                    <a href="pages/feedback.html" class="card-link">
+                        <span class="card-icon">💬</span>
+                        <h4>Opiniones y reportes</h4>
+                        <p>Compartí tu experiencia y consultá información de la comunidad.</p>
+                    </a>
+
+                    <a href="pages/login.html" class="card-link">
+                        <span class="card-icon">👤</span>
+                        <h4>Tu cuenta</h4>
+                        <p>Ingresá o registrate para acceder a las funciones disponibles.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 San Rafael Movilidad</p>
+            <p>Información para recorrer San Rafael, Mendoza.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
