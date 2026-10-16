@@ -1,7 +1,15 @@
 
+/* ==========================================
+   PÁGINA DE OPINIONES Y COMENTARIOS
+========================================== */
+
 .feedback-section {
-    padding: 40px 20px;
+    padding: 50px 20px 60px;
+    background: var(--page);
+    min-height: 60vh;
 }
+
+/* INTRODUCCIÓN */
 
 .feedback-intro {
     text-align: center;
@@ -9,38 +17,50 @@
     margin: 0 auto 40px;
 }
 
+.feedback-intro h1,
 .feedback-intro h2 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.25;
+    margin-bottom: 14px;
 }
 
 .feedback-intro p {
     color: var(--text-light);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
+
+/* DISTRIBUCIÓN DEL FORMULARIO Y OPINIONES */
 
 .feedback-grid {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 28px;
+    max-width: 1150px;
+    margin: 0 auto;
+    align-items: start;
 }
 
+/* FORMULARIO */
+
 .feedback-form-wrapper {
-    flex: 1.2;
-    min-width: 280px;
+    min-width: 0;
     background: var(--white);
-    border: 1px solid #e5e7eb;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--line);
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(21, 50, 75, 0.07);
 }
 
 .feedback-form-wrapper h3,
 .feedback-feed-wrapper h3 {
     color: var(--primary-color);
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
 }
+
+/* CAMPOS DEL FORMULARIO */
 
 .feedback-form .form-group {
     margin-bottom: 20px;
@@ -48,6 +68,7 @@
 
 .feedback-form label {
     display: block;
+    color: var(--ink);
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -55,20 +76,40 @@
 .feedback-form input,
 .feedback-form select,
 .feedback-form textarea {
+    display: block;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: var(--ink);
     font-size: 1rem;
     font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.feedback-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(40, 120, 165, 0.14);
+}
+
+/* CALIFICACIÓN CON ESTRELLAS */
 
 .rating-stars {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    gap: 4px;
-    font-size: 1.8rem;
+    align-items: center;
+    gap: 5px;
+    font-size: 2rem;
 }
 
 .rating-stars input {
@@ -76,97 +117,152 @@
 }
 
 .rating-stars label {
-    color: #d1d5db;
+    color: #cbd5e1;
     cursor: pointer;
+    margin-bottom: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .rating-stars label:hover,
 .rating-stars label:hover ~ label,
 .rating-stars input:checked ~ label {
-    color: #fbbf24;
+    color: #f5b82e;
 }
+
+.rating-stars label:hover {
+    transform: scale(1.1);
+}
+
+/* BOTÓN DE ENVÍO */
 
 .btn-submit-feedback {
     width: 100%;
-    background: var(--primary-color);
-    color: var(--white);
+    padding: 14px 18px;
+    background: var(--accent-color);
+    color: white;
     border: none;
-    padding: 14px;
+    border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
-    border-radius: 6px;
+    font-weight: 700;
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-submit-feedback:hover {
-    background: var(--secondary-color);
+    background: var(--green-dark);
+    transform: translateY(-2px);
 }
 
+/* LISTADO DE OPINIONES */
+
 .feedback-feed-wrapper {
-    flex: 0.8;
-    min-width: 280px;
+    min-width: 0;
 }
 
 .feed-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
 .feed-card {
     background: var(--white);
-    border: 1px solid #e5e7eb;
-    padding: 20px;
-    border-radius: 8px;
+    border: 1px solid var(--line);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(21, 50, 75, 0.05);
 }
 
 .feed-card.alert-delay {
-    border-left: 4px solid #ef4444;
+    border-left: 5px solid #dc4545;
 }
 
 .feed-card.alert-success {
-    border-left: 4px solid var(--accent-color);
+    border-left: 5px solid var(--accent-color);
 }
+
+/* CABECERA DE CADA OPINIÓN */
 
 .feed-card-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
     font-size: 0.9rem;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 .feed-date {
     color: var(--text-light);
 }
 
+/* INFORMACIÓN ADICIONAL */
+
 .feed-meta {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .feed-badge-line {
-    background: var(--bg-light);
-    padding: 2px 6px;
+    display: inline-block;
+    background: var(--blue-soft);
+    color: var(--primary-color);
+    padding: 4px 9px;
     font-size: 0.8rem;
-    font-weight: 600;
-    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 5px;
 }
 
 .feed-stars {
-    color: #fbbf24;
-    font-size: 0.9rem;
+    color: #f5b82e;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
 .feed-text {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--text-dark);
-    line-height: 1.4;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
 }
+
+/* TABLETS */
 
 @media (max-width: 900px) {
     .feedback-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-feed-wrapper {
+        margin-top: 10px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .feedback-section {
+        padding: 35px 16px 45px;
+    }
+
+    .feedback-intro {
+        margin-bottom: 28px;
+    }
+
+    .feedback-intro h1,
+    .feedback-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .feedback-form-wrapper {
+        padding: 20px;
+    }
+
+    .feed-card {
+        padding: 18px;
     }
 }
